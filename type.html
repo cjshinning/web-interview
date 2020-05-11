@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 一、数据类型：
+        // 7种：
+        // 原始类型：Boolean Null Undefined Number String Symbol
+        // 复杂数据类型：Object
+
+        // 二、类型转换
+        // 显示类型
+        // Number String Boolean
+
+        // console.log(Number('234'));     //234
+        // console.log(Number('234abc'));  //NaN
+        // console.log(Number(''));        //0
+        // console.log(Number(false));     //0
+        // console.log(Number(undefined)); //NaN
+        // console.log(Number(null));      //0
+
+        // 如果是对象，先调他的valueOf方法，再调toString方向
+        // var a = {a: 1};
+        // console.log(Number({a: 1}));
+
+    </script>
+
+    <script>
+        // console.log(String(123));       //123
+        // console.log(String('abc'));     //abc
+        // console.log(String(true));      //undefined
+        // console.log(String(undefined));
+        // console.log(String(null));
+        // // 如果是对象，先调他的toString方法，再调valueOf方法
+        // var b = {
+        //     b: 1,
+        //     toString: function(){
+        //         return {
+        //             b: 2
+        //         }
+        //     },
+        //     valueOf: function(){
+        //         return 'b';
+        //     }
+        // };
+        // console.log(String(b)); //b
+    </script>
+
+    <script>
+        // 除以下转换返回false，其他的都转换为true
+        // undefined
+        // null
+        // -0
+        // +0
+        // NaN
+        // ''
+        // console.log('undefined ', Boolean(undefined));  //false
+        // console.log('null ', Boolean(null));    //false
+        // console.log('-0 ', Boolean(-0));        //false
+        // console.log('+0 ', Boolean(+0));        //false
+        // console.log('NaN ', Boolean(NaN));      //false
+        // console.log('"" ', Boolean(""));        //false
+        // console.log('[] ', Boolean([]));        //false
+    </script>
+
+    <script>
+        // 隐式类型转换
+        console.log([]+[]);
+        console.log({}+[]);
+        console.log({}+{});
+        console.log([]+[]);
+        console.log(true+true);
+    </script>
+</body>
+</html>
