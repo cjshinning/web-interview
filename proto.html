@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 一、创建对象的几种方法
+        // 1、字面量法
+        var o1 = {name: 'o1'};
+        var o2 = new Object({name: 'o2'});
+        
+        // 2、构造函数法
+        var M  = function(name){this.name = name};
+        var o3 = new M('o3');
+
+        // 3、Object.create()
+        var p = {name: 'p'};
+        var o4 = Object.create(p);
+
+        M.prototype.say = function(){
+            console.log('say hi');
+        }
+
+        var o5 = new M('o5');
+
+        // 实例：无论是使用字面量还是构造函数生成的对象都是实例
+        // 构造函数：任何一个函数被new使用了就称为构造函数
+        // 构造函数可以使用new运算符生成一个实例
+        // 函数（包括构造函数）都有prototype属性，这是函数声明时js自动加上的属性，即构造函数的prototype（原型）
+        // 原型对象中会有一个构造器（constructor），这个构造器默认z指向你声明的函数
+        // o3是实例，M是构造函数，M.prototype有一个构造器constructor，并且M.prototype.constructor === M为true
+
+        // 构造函数通过new和实例保持关联，构造函数通过constructor和原型对象保持关联
+        // 实例的__proto__引用的是构造函数的prototype，即o3.__proto__===M.prototype为true
+
+    </script>
+</body>
+</html>
