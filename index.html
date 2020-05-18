@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv"></div>
+    <script>
+        // 1、什么是同源策略以及限制
+        // 2、前后端如何通信
+        // 3、如何创建ajax
+        // 4、跨域通信的几种方式
+        // 1答案：同源策略是一个重要的安全策略，它用于限制一个源（origin）的文档或者加载的脚本如何与另外一个源的资源进行交互。
+        // 如果两个url的protocol,port,host都相同的话，则这两个url就是同源。
+        // 2答案：ajax(支持同源),websocket（支持跨域）,cors（支持同源和跨域）
+        // 创建ajax
+        // var xhr = new XMLHttpRequest();
+        // xhr.open('GET', 'test.txt', true);
+        // xhr.send();
+        // xhr.onreadystatechange = function(){
+        //     if(xhr.readyState == 4 && xhr.status == 200){
+        //         document.getElementById('myDiv').innerHTML = xhr.responseText;
+        //     }
+        // }
+
+        // 4、回答
+        // JSONP,Hash,postMessage,webSocket,CORS
+        // JSONP原理：
+        function jsonp(req){
+            var script = document.createElement('script');
+            var url = req.url + '?callback=' + req.callback.name;
+            script.src = url;
+            document.getElementsByTagName('head')[0].appendChild(script); 
+        }
+        function hello(res){
+            alert('hello' + res.data);
+        }
+        jsonp({
+            url: 'http://localhost:8080/',
+            callback: hello
+        })
+    </script>
+</body>
+</html>

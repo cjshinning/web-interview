@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、基本概念和缩写
+        // CSRF，跨站请求伪造，英文名Cross-site request forgery
+        // 攻击原理：
+        // 用户是网站A的注册用户，用户登录网站，网站A核查信息后下发cookie（完成身份认证）
+        // 用户又访问了网站B，网站B存在引诱点击，一个链接指向网站A的接口，用户点击后访问A网站，浏览器自动上传cookie，重新验证通过后发现是用户，执行接口的动作（引诱点击，执行接口）
+        // 1、接口存在漏洞
+        // 2、用户在注册网站登录过
+        // CSRF防御措施：Token验证，Referer验证，隐藏令牌
+
+        // XSS（cross-site scripting 跨域脚本攻击）
+        // XSS是像页面注入js运行，在js中做他想做的事情
+        // CSRF利用本身的漏洞，帮你自动执行，依赖于用户登录网站
+    </script>
+</body>
+</html>
