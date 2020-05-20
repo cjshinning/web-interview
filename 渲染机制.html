@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 1、什么是doctype?
+    // DTD是一系列的语法规则，用来定义xml或(x)html的文件类型。浏览器会根据它来判断文档类型，决定使用何种协议来解析，以及切换浏览器模式
+    // 简单的说，就是告诉浏览器我是什么文档类型，浏览器根据这个来判断用何种引擎来解析它渲染它
+    // DOCTYPE用来声明文档类型和DTD规范的，一个主要用途是便是文件的合法性验证。如果文件代码不合法，那么浏览器会出一些差错
+    // 简单的说，DOCTYPE就是直接告诉浏览器使用哪种DTD（文档类型）
+
+    // 2、常见的DOCTYPE有哪几个？
+    // HTML4和HTML5
+    // HTML5：<!DOCTYPE html>
+    // HTML4：严格模式和传统模式
+    // 严格模式包括所有HTML元素和属性，但是不包括弃用的属性（如font）
+    // 传统模式包括所有HTML元素和属性，但是包括弃用的属性（如font）
+
+    // 3、浏览器渲染过程
+    // html,css,js都会影响页面的最终呈现形式
+    // (1)HTML通过HTML Parser（HTML解释器）生成DOM Tree(DOM树)
+    // (2)Style Sheets通过CSS Parser（CSS解释器）生成CSSOM Tree
+    // (3)DOM Tree和CSSOM Tree结合（Attachment）形成一个Render Tree(不知道具体位置)，通过Layout计算出DOM要显示的真正位置（宽高颜色）在render tree展示出来
+    // （4）最后开始painting，浏览器通过GUI开始画图，把内容基本呈现出来，最后display大家在浏览器上就能看到效果了
+
+    // 4、重排（回流）Reflow
+    // DOM结构中每个元素都有自己的盒子（模型），这些都需要浏览器根据各种样式计算并根据计算结果将元素放到它该出现的位置，这个过程称为reflow
+
+    // 触发Reflow
+    // 增加、删除、修改DOM节点，或Reflow或Repaint
+    // 移动DOM位置，或者动画
+    // 修改css样式
+    // resize窗口或者滚动的时候
+    // 修改网页默认字体
+
+    // 5、重绘Repaint
+    // 当各种盒子的位置、大小以及其他的属性，如颜色、字体大小等都确定下来后，浏览器按照各自的特性绘制一遍，于是页面内容出现了，这个过程称之为repaint
+    // 简单的说就是页面要呈现的内容统统画在屏幕上
+
+    // 触发Repaint
+    // DOM改动
+    // CSS改动
+
+    </script>
+</body>
+</html>
