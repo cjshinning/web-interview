@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(1);
+        // setTimeout(() => {
+        //     console.log(2);
+        // }, 1000);
+        // console.log(3);
+        // 1
+        // 3
+        // 2
+
+        // console.log(1);
+        // while(true){
+
+        // }
+        // console.log(2);
+        // 1
+        // 只打印1是因为while循环不断执行，同步任务没有执行完，是不会执行下面的任务的
+
+        // console.log('A');
+        // setTimeout(function(){
+        //     console.log('B')
+        // },0)
+        // while(true){
+
+        // }
+        // A
+        // setTimeout是异步队列，在同步任务执行时，任何异步队列都不会被执行
+
+        for(var i=0;i<4;i++){
+            setTimeout(function(){
+                console.log(i);
+            },1000)
+        }
+        // 4 4 4 4
+        // 打印出4个4，原因是for循环执行时，setTimeout是异步事件，先放入异步队列中，但是并没有执行，浏览器有个定时器处理setTimeout等事件，在1000毫秒后才执行，就是是设置0毫秒，由于浏览器对于小于4毫秒的都是以4毫秒计算，但是循环是非常快的，在setTimeout执行的时候，循环早已执行完毕，变成4，所以四次打印都是4
+
+        // JS单线程：同一个时间只能干一件事情
+        // 任务队列：同步任务和异步任务
+        // Event Loop:
+        // JS执行栈中只执行同步任务
+        
+        // 异步人物
+        // setTimeout和setInterval
+        // DOM事件
+        ES6的promise
+    </script>
+</body>
+</html>
