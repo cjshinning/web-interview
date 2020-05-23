@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // error事件可以通过捕获(true)获得，但是不能通过冒泡（false）
+        // window.addEventListener('error', function(e){
+        //     console.log('捕获',e);
+        // }, true);
+    </script>
+</head>
+<body>
+    <!-- <script src="1.js"></script> -->
+    <script>
+        // 1、如何监测js错误？
+        // 2、如何保证产品质量    
+        // 考察的都是错误监控
+        // 前端错误分类：
+        // 即时允许错误：代码错误
+        // 资源加载错误
+
+        // 错误捕获方式：
+        // 即使运行错误：1)try...catch     2)window.onerror
+
+        // 资源加载错误
+        // 1)object.onerrer    2)performace.getEntries     3)Error事件捕获
+
+        // 上报错误的基本原理：
+        // 1、采用ajax
+        // 2、利用image
+        (new Image()).src = 'http://baidu.com/testjs/?abs'
+    </script>
+</body>
+</html>
